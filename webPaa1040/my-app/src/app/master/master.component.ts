@@ -3,7 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogOverviewExampleDialog } from "./dialog-overview-example-dialog";
 import { RestSourceData } from 'src/app/model/rest.datasource';
 import { DataSource } from '@angular/cdk/collections';
-
+import { ReversePipe } from './reverse.pipe';
 
 export interface DialogData {
   animal: string;
@@ -20,6 +20,7 @@ export class MasterComponent {
   displayedColumns: string[] = ['position', 'date','name', 'weight', 'symbol','actions'];
   animal: string;
   name: string;
+  sortByDate : boolean = false;  
   totalCredit;
   totalDebit;
 

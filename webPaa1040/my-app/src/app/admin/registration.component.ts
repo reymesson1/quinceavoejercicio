@@ -19,7 +19,7 @@ export class RegistrationComponent {
   constructor(private data : RestSourceData){}
 
   Post(){
-    
+    console.log(this.registerData);
     this.data.sendUserRegistration(this.registerData);
     this.registerData = {};
   }

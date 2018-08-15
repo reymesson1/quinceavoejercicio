@@ -20,10 +20,17 @@ app.get('/posts',  async(req, res) =>{
     res.send(posts);
 });
 
+app.post('/users', async (req, res)=>{
+    var userData = req.body;    
+    var user = await User.findOne({username: userData.username});    
+    res.send(user);    
+});
+
 app.get('/recapposts',  async(req, res) =>{    
     var posts = await Post.aggregate([{"$group":{"_id":"$type","total":{"$sum":"$value"}}}])
     res.send(posts);
 });
+
 
 app.post('/postcomment', (req, res)=>{
 

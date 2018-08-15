@@ -1,0 +1,14 @@
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.vr{
+
+  width: 0px; /* Use only border style */ 
+  height: 40px;
+  background-color:black;
+  float: left;
+   border-left: 1px inset;
+   
+}

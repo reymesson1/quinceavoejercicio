@@ -1,6 +1,6 @@
 <div class="row">
         <mat-card class="example-card">        
-            <img mat-card-image style="width:100%;height:500px;" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <img mat-card-image style="width: 79%;height: 440px;display: block;filter: blur(5px);-webkit-filter: blur(5px);margin-left: 12%;" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
             <mat-card-content>
                 <h1>Description</h1>
                 <p>
@@ -38,7 +38,7 @@
         <mat-card>
             <div class="row">
                 <mat-form-field style="width:100%;">
-                    <input matInput placeholder="Comment" [(ngModel)]="commentData.comment" name="comment" >
+                    <input matInput placeholder="Comment" [(ngModel)]="commentData.comment" name="comment" autocomplete="off" >
                 </mat-form-field>
             </div>
             <div class="row">

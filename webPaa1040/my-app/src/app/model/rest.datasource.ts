@@ -19,6 +19,14 @@ export class RestSourceData{
         this.messages = res;
     })        
   }
+
+  getUser(user) {      
+    
+    this.http.post<any>(this.authPath +'/users', {"username":user}).subscribe(res =>{
+        this.users = res                
+    });
+  }
+
   getDashboard() {      
 
     this.http.get<any>(this.authPath +'/recapposts').subscribe(res =>{
@@ -51,6 +59,7 @@ export class RestSourceData{
 
   logout(){
       localStorage.removeItem(this.TOKEN_KEY);
+      //localStorage.clear();
   }
 
   loginUser(loginData) {
@@ -68,7 +77,7 @@ export class RestSourceData{
   sendUserRegistration(regData) {
     this.http.post<any>(this.authPath + '/register', regData).subscribe(res =>{ 
         console.log(res) 
-        localStorage.setItem(this.TOKEN_KEY, res.token)  
+        //localStorage.setItem(this.TOKEN_KEY, res.token)  
         if(this.isAuthenticated){
             this.route.navigateByUrl("/")
         }else{
@@ -81,7 +90,7 @@ export class RestSourceData{
 
       this.http.post<any>(this.authPath + '/postcomment', comment).subscribe(res =>{ 
             console.log(res) 
-            localStorage.setItem(this.TOKEN_KEY, res.token)  
+            //localStorage.setItem(this.TOKEN_KEY, res.token)  
             if(this.isAuthenticated){
                 this.route.navigateByUrl("/")
             }else{
